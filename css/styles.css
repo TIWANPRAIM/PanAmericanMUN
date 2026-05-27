@@ -6,6 +6,7 @@
 
 /* ── Custom Properties ── */
 :root {
+  color-scheme: dark;
   --bg-deep:     #0A0E1A;
   --bg-card:     #111827;
   --bg-elevated: #1A2234;
@@ -137,6 +138,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
   white-space: nowrap;
   color: var(--text-2);
   pointer-events: none;
+  z-index: 10;
 }
 
 /* ── Badges ── */
@@ -160,13 +162,14 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 1000; height: var(--nav-height);
   display: flex; align-items: center;
-  transition: background 0.45s ease, backdrop-filter 0.45s ease, border-bottom 0.45s ease;
+  border-bottom: 1px solid transparent;
+  transition: background 0.45s ease, backdrop-filter 0.45s ease, border-bottom-color 0.45s ease;
 }
 .navbar.scrolled {
   background: rgba(10,14,26,0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+  border-bottom-color: var(--border);
 }
 .navbar .container {
   display: flex;
@@ -577,7 +580,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
   max-height: 0; overflow: hidden;
   transition: max-height 0.4s ease;
 }
-.faq-item.open .faq-answer { max-height: 320px; }
+.faq-item.open .faq-answer { max-height: 640px; }
 .faq-answer p { padding-bottom: 1.5rem; color: var(--text-2); line-height: 1.85; font-size: 0.9rem; }
 .contact-block { padding: 5rem 0 var(--section-py); text-align: center; }
 .contact-block h2 { margin-bottom: 1rem; }
@@ -626,10 +629,25 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 @media (max-width: 480px) {
   .hero-title { font-size: 2.75rem; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .stat-item:not(:last-child)::after { display: none; }
   .team-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Accessibility ── */
+section[id] { scroll-margin-top: var(--nav-height); }
+
+a:focus-visible, button:focus-visible, .filter-tab:focus-visible, .faq-q:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* utility */
 .text-center { text-align: center; }
-.mt-4 { margin-top: 1rem; }
 section { position: relative; }
