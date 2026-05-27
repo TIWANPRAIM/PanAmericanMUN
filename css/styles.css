@@ -125,7 +125,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 .btn-paper:not([disabled]):hover { border-color: var(--gold); color: var(--gold); }
 .btn-paper[disabled] { opacity: 0.45; cursor: not-allowed; }
 .btn-paper[disabled]:hover::after {
-  content: 'Coming soon';
+  content: 'Coming soon — check back later';
   position: absolute;
   bottom: calc(100% + 8px);
   left: 50%;
