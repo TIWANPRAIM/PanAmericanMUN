@@ -31,13 +31,6 @@
   });
 })();
 
-/* ── AOS init ── */
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof AOS !== 'undefined') {
-    AOS.init({ duration: 750, once: true, offset: 90 });
-  }
-});
-
 /* ── Canvas particle network ──
    Call initParticles('canvas-id') on any page.          */
 function initParticles(canvasId) {
@@ -48,6 +41,8 @@ function initParticles(canvasId) {
   const COUNT = 70;
   const MAX_D = 130;
   let W, H, pts = [];
+  let rafId = null;
+  let resizeTimer = null;
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -71,7 +66,7 @@ function initParticles(canvasId) {
         const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
         const d  = Math.sqrt(dx * dx + dy * dy);
         if (d < MAX_D) {
-          ctx.strokeStyle = GOLD + ((1 - d / MAX_D) * 0.22) + ')';
+          ctx.strokeStyle = GOLD + ((1 - d / MAX_D) * 0.22).toFixed(3) + ')';
           ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
@@ -93,26 +88,40 @@ function initParticles(canvasId) {
       if (p.y < 0 || p.y > H) p.vy *= -1;
     });
     draw();
-    requestAnimationFrame(step);
+    rafId = requestAnimationFrame(step);
   }
 
-  window.addEventListener('resize', () => { resize(); mkPts(); });
-  resize(); mkPts(); step();
+  function start() { if (!rafId) rafId = requestAnimationFrame(step); }
+  function stop()  { if (rafId)  { cancelAnimationFrame(rafId); rafId = null; } }
+
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stop() : start();
+  });
+
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { resize(); mkPts(); }, 150);
+  });
+
+  resize(); mkPts(); start();
 }
 
 /* ── Typewriter ── */
 function initTypewriter(id, text, speed) {
   const el = document.getElementById(id);
   if (!el) return;
-  speed = speed || 60;
+  speed = speed ?? 60;
+  if (!document.head.querySelector('#tw-style')) {
+    const styleEl = document.createElement('style');
+    styleEl.id = 'tw-style';
+    styleEl.textContent = '@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}';
+    document.head.appendChild(styleEl);
+  }
   el.textContent = '';
   const cursor = Object.assign(document.createElement('span'), {
     textContent: '|',
     style: 'animation:twBlink 0.7s step-end infinite;color:var(--gold);margin-left:1px;'
   });
-  const styleEl = document.createElement('style');
-  styleEl.textContent = '@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}';
-  document.head.appendChild(styleEl);
   el.appendChild(cursor);
   let i = 0;
   const iv = setInterval(() => {
@@ -129,18 +138,19 @@ function initCountdown(isoDate) {
     m: document.getElementById('cd-mins'),
     s: document.getElementById('cd-secs')
   };
-  if (!els.d) return;
+  if (!els.d || !els.h || !els.m || !els.s) return;
   const target = new Date(isoDate).getTime();
   const pad = n => String(n).padStart(2, '0');
+  const iv = setInterval(tick, 1000);
   function tick() {
     const diff = Math.max(0, target - Date.now());
     els.d.textContent = pad(Math.floor(diff / 86400000));
     els.h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
     els.m.textContent = pad(Math.floor((diff % 3600000)  / 60000));
     els.s.textContent = pad(Math.floor((diff % 60000)    / 1000));
+    if (diff === 0) clearInterval(iv);
   }
   tick();
-  setInterval(tick, 1000);
 }
 
 /* ── Stat counter animation ── */
@@ -164,7 +174,7 @@ function initCounters() {
       })(t0);
     });
   }, { threshold: 0.5 });
-  items.forEach(i => io.observe(i));
+  items.forEach(el => io.observe(el));
 }
 
 /* ── FAQ accordion ── */
@@ -195,6 +205,9 @@ function initFilter() {
 
 /* ── Boot ── */
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 750, once: true, offset: 90 });
+  }
   initParticles('hero-canvas');
   initParticles('page-canvas');
   initTypewriter('hero-typewriter', "Shaping Tomorrow's World", 58);
