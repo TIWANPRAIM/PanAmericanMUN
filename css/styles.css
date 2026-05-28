@@ -482,6 +482,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 /* =========================================
    COMMITTEES PAGE (full)
    ========================================= */
+.committees-section { padding: var(--section-py) 0; }
 .filter-tabs {
   display: flex; align-items: center; justify-content: center;
   gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap;
@@ -535,7 +536,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 .sg-feat-text { color: var(--text-2); line-height: 1.85; font-size: 0.975rem; margin-bottom: 1.25rem; }
 .sg-feat-email a { color: var(--gold); font-size: 0.875rem; transition: color var(--transition); }
 .sg-feat-email a:hover { color: var(--gold-light); }
-.team-section { padding: calc(var(--section-py) * 0.5) 0 var(--section-py); }
+.team-section { background: var(--bg-card); padding: var(--section-py) 0; }
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
 .team-card {
   background: var(--bg-card); border: 1px solid var(--border);

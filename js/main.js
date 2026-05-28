@@ -180,10 +180,22 @@ function initCounters() {
 /* ── FAQ accordion ── */
 function initFAQ() {
   document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q')?.addEventListener('click', () => {
+    const q = item.querySelector('.faq-q');
+    if (!q) return;
+    function toggle() {
       const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
 }
