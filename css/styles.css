@@ -630,7 +630,6 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 @media (max-width: 480px) {
   .hero-title { font-size: 2.75rem; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
-  .stat-item:not(:last-child)::after { display: none; }
   .team-grid { grid-template-columns: 1fr; }
 }
 
@@ -651,4 +650,5 @@ a:focus-visible, button:focus-visible, .filter-tab:focus-visible, .faq-q:focus-v
 
 /* utility */
 .text-center { text-align: center; }
+.mt-4 { margin-top: 1rem; }
 section { position: relative; }
