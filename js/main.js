@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles('hero-canvas');
   initParticles('page-canvas');
   initTypewriter('hero-typewriter', "Shaping Tomorrow's World", 58);
-  initCountdown('2027-02-20T09:00:00');
+  initCountdown('2027-09-16T09:00:00');
   initCounters();
   initFAQ();
   initFilter();
