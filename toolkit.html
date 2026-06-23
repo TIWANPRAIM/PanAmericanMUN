@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toolkit — Pan American MUN 2026</title>
+  <meta name="description" content="Everything delegates need to prepare for Pan American MUN 2026 — schedule, dress code, position papers, rules of procedure, and more." />
+  <meta property="og:title" content="Toolkit — Pan American MUN 2026" />
+  <meta property="og:description" content="Everything delegates need to prepare for Pan American MUN 2026 — schedule, dress code, position papers, rules of procedure, and more." />
+  <meta property="og:image" content="img/carolina.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="committees.html">Committees</a>
+        <a href="secretariat.html">Secretariat</a>
+        <a href="faq.html">FAQ</a>
+        <a href="toolkit.html" class="active">Toolkit</a>
+      </div>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="committees.html">Committees</a>
+    <a href="secretariat.html">Secretariat</a>
+    <a href="faq.html">FAQ</a>
+    <a href="toolkit.html" class="active">Toolkit</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <canvas id="page-canvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="un-emblem-bg" aria-hidden="true">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="150" cy="150" r="145" stroke-width="5"/>
+        <circle cx="150" cy="150" r="135" stroke-width="2.5"/>
+        <circle cx="150" cy="150" r="108" stroke-width="2"/>
+        <circle cx="150" cy="150" r="80" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="54" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="28" stroke-width="1"/>
+        <line x1="150" y1="42" x2="150" y2="258" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="50" ry="108" stroke-width="1.2"/>
+        <line x1="42" y1="150" x2="258" y2="150" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="108" ry="40" stroke-width="1.2"/>
+        <ellipse cx="150" cy="108" rx="86" ry="28" stroke-width="1"/>
+        <ellipse cx="150" cy="192" rx="86" ry="28" stroke-width="1"/>
+        <line x1="75" y1="75" x2="225" y2="225" stroke-width="0.8"/>
+        <line x1="225" y1="75" x2="75" y2="225" stroke-width="0.8"/>
+        <path d="M40,150 C30,128 24,108 28,82" stroke-width="2.5"/>
+        <ellipse cx="27" cy="138" rx="11" ry="5.5" transform="rotate(-30,27,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="122" rx="11" ry="5.5" transform="rotate(-42,24,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="107" rx="10" ry="5" transform="rotate(-52,24,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="27" cy="93" rx="9" ry="4.5" transform="rotate(-62,27,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="31" cy="81" rx="8" ry="4" transform="rotate(-70,31,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <path d="M260,150 C270,128 276,108 272,82" stroke-width="2.5"/>
+        <ellipse cx="273" cy="138" rx="11" ry="5.5" transform="rotate(30,273,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="122" rx="11" ry="5.5" transform="rotate(42,276,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="107" rx="10" ry="5" transform="rotate(52,276,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="273" cy="93" rx="9" ry="4.5" transform="rotate(62,273,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="269" cy="81" rx="8" ry="4" transform="rotate(70,269,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="page-hero-content">
+      <h1>Toolkit</h1>
+      <div class="gold-line"></div>
+      <p class="subtitle">Everything you need to prepare, debate, and excel at Pan American MUN 2026</p>
+    </div>
+  </section>
+
+  <!-- TOOLKIT TABS + PANELS -->
+  <section class="toolkit-section">
+    <div class="container">
+
+      <div class="filter-tabs toolkit-tabs">
+        <button class="filter-tab toolkit-tab active" data-panel="schedule">Schedule</button>
+        <button class="filter-tab toolkit-tab" data-panel="dress-code">Dress Code</button>
+        <button class="filter-tab toolkit-tab" data-panel="award-criteria">Award Criteria</button>
+        <button class="filter-tab toolkit-tab" data-panel="position-paper">Position Paper</button>
+        <button class="filter-tab toolkit-tab" data-panel="resolution-paper">Resolution Paper</button>
+        <button class="filter-tab toolkit-tab" data-panel="general-rules">General Rules</button>
+        <button class="filter-tab toolkit-tab" data-panel="flow-of-session">Flow of the Session</button>
+        <button class="filter-tab toolkit-tab" data-panel="protocol">Protocol</button>
+        <button class="filter-tab toolkit-tab" data-panel="map">Pan American MUN Map</button>
+        <button class="filter-tab toolkit-tab" data-panel="clauses">Clauses</button>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="toolkit-panel active" data-panel="schedule" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Schedule</h2>
+        </div>
+        <div class="tbd-block">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></svg>
+          <span>To be announced</span>
+          <p>The full conference schedule will be published here closer to the event date.</p>
+        </div>
+      </div>
+
+      <!-- DRESS CODE -->
+      <div class="toolkit-panel" data-panel="dress-code" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Dress Code</h2>
+        </div>
+        <div class="tbd-block">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 4l4 4-3 3-1-1v9H8v-9l-1 1-3-3 4-4 4-2 4 2z"/></svg>
+          <span>To be announced</span>
+          <p>Dress code guidelines will be published here closer to the event date.</p>
+        </div>
+      </div>
+
+      <!-- AWARD CRITERIA -->
+      <div class="toolkit-panel" data-panel="award-criteria" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Award Criteria</h2>
+        </div>
+        <div class="toolkit-body">
+          <p>Each committee's dais evaluates delegates throughout the conference using a standardized rubric that covers preparation, diplomacy, public speaking, and the quality of working papers and resolutions. Review the full breakdown below to understand exactly what earns recognition at Pan American MUN 2026.</p>
+          <div class="pdf-cta">
+            <a href="pdfs/award-criteria.pdf" target="_blank" class="btn btn-gold">View Award Criteria (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSITION PAPER -->
+      <div class="toolkit-panel" data-panel="position-paper" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Position Paper</h2>
+        </div>
+        <div class="toolkit-body">
+          <p>Use the guide below to prepare a position paper that meets Pan American MUN's standards for research, structure, and original analysis.</p>
+          <div class="pdf-cta">
+            <a href="pdfs/position-paper-guide.pdf" target="_blank" class="btn btn-gold">Download Position Paper Guide (PDF)</a>
+          </div>
+
+          <h3>What are position papers?</h3>
+          <p>The purpose of the position paper is to assist delegates in assembling their research into an organized policy statement and ensure that debate in committees is highly substantive. Individual position papers are a crucial part of the preparation process, and further information about their format and content is provided in this section.</p>
+          <p>In each committee Background Paper, the Director has presented issues on each topic generally as it pertains to individual delegations specifically. The Research and Preparation Questions found at the end of the topic papers in each Background Paper have been especially formulated to lead the delegates in a logical progression through the topic and position paper. It is important that delegates directly answer these research questions.</p>
+
+          <h3>A good position paper will:</h3>
+          <ul class="bullet-list">
+            <li>Clearly outline the country's policies on the topics.</li>
+            <li>Identify the factors contributing to a country's positions.</li>
+            <li>Refer to domestic and international documents and correctly cite the sources.</li>
+            <li>Deal with the in-depth issues of the topic areas as well as the overt topic issues.</li>
+            <li>Provide suggestions of solutions that address the problem areas.</li>
+            <li>Answer all Research and Preparation Questions posed in the background Guides.</li>
+          </ul>
+
+          <p>In addition, the position papers should be concise, accurate, and well written. The staff looks for the demonstration of the following skills in evaluating the papers:</p>
+          <ul class="bullet-list">
+            <li>Original and critical thinking</li>
+            <li>True understanding of the dynamics of your country</li>
+            <li>Functional and applied knowledge of the topics.</li>
+          </ul>
+
+          <div class="toolkit-warning">Please note that under no circumstances will plagiarism of any portion of position papers be tolerated! Plagiarism is defined as the usage of material from other sources without appropriate citation. Plagiarism includes both word-for-word borrowing of text and material and paraphrasing of material without citation. All material acquired from existing sources, including text quotations, charts, graphs, diagrams, and data must be cited.</div>
+
+          <h3>How to write a position paper</h3>
+          <p>It is important to recognize that the amount of information available for use in your position paper will vary according to the size, level of development, and age of your country. Your committee's topic will also affect the amount and type of research you will be able to find. Do not be discouraged by the limitations of your resources.</p>
+        </div>
+      </div>
+
+      <!-- RESOLUTION PAPER -->
+      <div class="toolkit-panel" data-panel="resolution-paper" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Resolution Paper</h2>
+        </div>
+        <div class="tbd-block">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          <span>To be announced</span>
+          <p>Resolution paper guidelines will be published here closer to the event date.</p>
+        </div>
+      </div>
+
+      <!-- GENERAL RULES -->
+      <div class="toolkit-panel" data-panel="general-rules" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>General Rules</h2>
+        </div>
+        <ol class="rules-list">
+          <li><span>English is the official working language.</span></li>
+          <li><span>Parliamentary procedures must be followed during the sessions.</span></li>
+          <li><span>The usage of personal pronouns is not permitted.</span></li>
+          <li><span>Delegates must stay on topic and in the position they represent.</span></li>
+          <li><span>Delegates must be respectful to all the participants and hosts.</span></li>
+          <li><span>Dress Code must be necessarily followed.</span></li>
+          <li><span>No cell phones or any electronic devices are allowed during the sessions.</span></li>
+          <li><span>Eating, drinking and chewing gum are strictly prohibited.</span></li>
+          <li><span>Delegates are not allowed to speak to their advisors or other delegates during the session.</span></li>
+        </ol>
+      </div>
+
+      <!-- FLOW OF THE SESSION -->
+      <div class="toolkit-panel" data-panel="flow-of-session" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Flow of the Session</h2>
+        </div>
+        <div class="flow-timeline">
+          <div class="flow-step" data-step="1"><h4>Introduction</h4></div>
+          <div class="flow-step" data-step="2"><h4>General Rules</h4></div>
+          <div class="flow-step" data-step="3"><h4>Roll Call</h4></div>
+          <div class="flow-step" data-step="4"><h4>Open the session</h4></div>
+          <div class="flow-step" data-step="5"><h4>Establish the topic</h4></div>
+          <div class="flow-step" data-step="6"><h4>Establish the agenda</h4></div>
+          <div class="flow-step" data-step="7"><h4>Open the speaker's list</h4></div>
+          <div class="flow-step" data-step="8"><h4>Speaker's list</h4></div>
+          <div class="flow-step" data-step="9"><h4>Moderate debate</h4></div>
+          <div class="flow-step" data-step="10"><h4>Extend moderate debate / close moderate debate</h4></div>
+          <div class="flow-step" data-step="11"><h4>Unmoderated debate</h4></div>
+          <div class="flow-step" data-step="12"><h4>Extension/Close unmoderated debate</h4></div>
+          <div class="flow-step" data-step="13"><h4>Vote for sponsors</h4></div>
+          <div class="flow-step" data-step="14"><h4>Third and fourth sponsor read the resolution paper in the committee</h4></div>
+          <div class="flow-step" data-step="15"><h4>Vote for resolution paper</h4></div>
+          <div class="flow-step" data-step="16"><h4>First and Second sponsor go to G-A Committees Specialist to read the resolution paper</h4></div>
+          <div class="flow-step" data-step="17"><h4>Resolution paper passes / is denied</h4></div>
+        </div>
+        <div class="flow-footnotes">
+          <p>If the resolution paper is denied after reading it at the committee or in the General Assembly, the committee should open an unmoderated debate. (Sponsors will remain the same)</p>
+          <p>In case of a crisis, the delegates should restart the flow of the session starting from the moderate debate.</p>
+        </div>
+      </div>
+
+      <!-- PROTOCOL -->
+      <div class="toolkit-panel" data-panel="protocol" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Agenda</span>
+          <h2>Protocol</h2>
+        </div>
+
+        <div class="protocol-grid">
+          <div class="protocol-stat"><strong>1:00–1:30</strong><span>Speech Time</span></div>
+          <div class="protocol-stat"><strong>3 (+2)</strong><span>Questions</span></div>
+          <div class="protocol-stat"><strong>2</strong><span>Follow-ups</span></div>
+          <div class="protocol-stat"><strong>3 (+2)</strong><span>Commentaries</span></div>
+        </div>
+
+        <dl class="protocol-terms">
+          <div class="protocol-term"><dt>Motion to</dt><dd>Used to make and establish any form of process within a debate.</dd></div>
+          <div class="protocol-term"><dt>Point of Information</dt><dd>Used to make questions.</dd></div>
+          <div class="protocol-term"><dt>Point of Commentary</dt><dd>Used to make a comment.</dd></div>
+          <div class="protocol-term"><dt>Point of Order</dt><dd>Used to correct any mistakes.</dd></div>
+          <div class="protocol-term"><dt>Point of Personal Privilege</dt><dd>Used to ask to go to the bathroom, speak louder, slower, etc.</dd></div>
+          <div class="protocol-term"><dt>Point of Reply</dt><dd>Used when a delegate feels personally insulted by another delegate.</dd></div>
+        </dl>
+
+        <div class="protocol-subgrid">
+          <div class="protocol-card">
+            <h4>Timings</h4>
+            <p><strong>Moderated Caucus:</strong> Maximum 15 minutes, one extension of 10 minutes is allowed.</p>
+            <p><strong>Unmoderated Caucus:</strong> Maximum 20 minutes, one extension of 10 minutes is allowed.</p>
+          </div>
+          <div class="protocol-card">
+            <h4>Warnings</h4>
+            <p><strong>Verbal Warnings:</strong> Speaking in first person, establishing direct conversations, not talking in English.</p>
+            <p><strong>Written Warnings:</strong> Being late, not following the dress code, eating, drinking and chewing gum, using cell phone, and having received 3 verbal warnings.</p>
+          </div>
+        </div>
+
+        <div class="protocol-subgrid" style="grid-template-columns:1fr; max-width:760px;">
+          <div class="protocol-card">
+            <h4>Motions</h4>
+            <p><strong>To read the second and third paragraphs:</strong> Minimum 8 delegates must have passed to read their position paper.</p>
+            <p><strong>To start a Moderated Caucus:</strong> Half of the committee must have read their position paper.</p>
+            <p><strong>To start an Unmoderated Debate:</strong> The extension of the moderated debate must have finished.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAN AMERICAN MUN MAP -->
+      <div class="toolkit-panel" data-panel="map" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Pan American MUN Map</h2>
+        </div>
+        <div class="map-placeholder-large">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Campus map coming soon</span>
+          <p>This space will hold the Pan American MUN venue map.</p>
+        </div>
+      </div>
+
+      <!-- CLAUSES -->
+      <div class="toolkit-panel" data-panel="clauses" data-aos="fade-up">
+        <div class="toolkit-panel-head">
+          <span class="label-gold">Toolkit</span>
+          <h2>Clauses</h2>
+        </div>
+        <div class="toolkit-body">
+          <p>Preambulatory clauses open a resolution by establishing the context, justification, and legal basis for the action proposed in the operative clauses that follow. They typically cite past UN resolutions, treaties, and the committee's mandate before transitioning into the resolution's substantive proposals. Download the full list of approved preambulatory clauses below to use when drafting your resolution.</p>
+          <div class="pdf-cta">
+            <a href="pdfs/clauses.pdf" target="_blank" class="btn btn-gold">View Clauses (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Pan American MUN" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Lead · Debate · Inspire<br>Universidad Panamericana · Monterrey</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="committees.html">Committees</a></li>
+            <li><a href="secretariat.html">Secretariat</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="toolkit.html">Toolkit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-social-row">
+            <a href="https://instagram.com/panamericanmun" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @panamericanmun
+            </a>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://tiktok.com/@panamericanmun" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              @panamericanmun
+            </a>
+          </div>
+          <p class="footer-email"><a href="mailto:carolina.dg@alumno.pas.edu.mx">carolina.dg@alumno.pas.edu.mx</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
