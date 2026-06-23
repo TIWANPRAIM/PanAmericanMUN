@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Committees — Pan American MUN 2026</title>
+  <meta name="description" content="Explore all 17 Pan American MUN committees across Regular, Specialized, and Beginner levels." />
+  <meta property="og:title" content="Committees — Pan American MUN 2026" />
+  <meta property="og:description" content="Explore all 17 Pan American MUN committees across Regular, Specialized, and Beginner levels." />
+  <meta property="og:image" content="img/carolina.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="committees.html" class="active">Committees</a>
+        <a href="secretariat.html">Secretariat</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="committees.html" class="active">Committees</a>
+    <a href="secretariat.html">Secretariat</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <canvas id="page-canvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="un-emblem-bg" aria-hidden="true">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="150" cy="150" r="145" stroke-width="5"/>
+        <circle cx="150" cy="150" r="135" stroke-width="2.5"/>
+        <circle cx="150" cy="150" r="108" stroke-width="2"/>
+        <circle cx="150" cy="150" r="80" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="54" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="28" stroke-width="1"/>
+        <line x1="150" y1="42" x2="150" y2="258" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="50" ry="108" stroke-width="1.2"/>
+        <line x1="42" y1="150" x2="258" y2="150" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="108" ry="40" stroke-width="1.2"/>
+        <ellipse cx="150" cy="108" rx="86" ry="28" stroke-width="1"/>
+        <ellipse cx="150" cy="192" rx="86" ry="28" stroke-width="1"/>
+        <line x1="75" y1="75" x2="225" y2="225" stroke-width="0.8"/>
+        <line x1="225" y1="75" x2="75" y2="225" stroke-width="0.8"/>
+        <path d="M40,150 C30,128 24,108 28,82" stroke-width="2.5"/>
+        <ellipse cx="27" cy="138" rx="11" ry="5.5" transform="rotate(-30,27,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="122" rx="11" ry="5.5" transform="rotate(-42,24,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="107" rx="10" ry="5" transform="rotate(-52,24,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="27" cy="93" rx="9" ry="4.5" transform="rotate(-62,27,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="31" cy="81" rx="8" ry="4" transform="rotate(-70,31,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <path d="M260,150 C270,128 276,108 272,82" stroke-width="2.5"/>
+        <ellipse cx="273" cy="138" rx="11" ry="5.5" transform="rotate(30,273,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="122" rx="11" ry="5.5" transform="rotate(42,276,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="107" rx="10" ry="5" transform="rotate(52,276,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="273" cy="93" rx="9" ry="4.5" transform="rotate(62,273,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="269" cy="81" rx="8" ry="4" transform="rotate(70,269,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="page-hero-content">
+      <h1>Committees</h1>
+      <div class="gold-line"></div>
+      <p class="subtitle">Choose your arena. Shape the debate.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="committees-section">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All (17)</button>
+        <button class="filter-tab" data-filter="regular">Regular (11)</button>
+        <button class="filter-tab" data-filter="specialized">Specialized (3)</button>
+        <button class="filter-tab" data-filter="beginner">Beginner (3)</button>
+      </div>
+
+      <div class="committees-full-grid">
+
+        <!-- REGULAR (11) -->
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" href="committee.html?id=unga" target="_blank">
+          <div class="acronym">UNGA</div>
+          <div class="full-name">United Nations General Assembly</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=unsc" target="_blank">
+          <div class="acronym">UNSC</div>
+          <div class="full-name">United Nations Security Council</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="120" href="committee.html?id=unhrc" target="_blank">
+          <div class="acronym">UNHRC</div>
+          <div class="full-name">United Nations Human Rights Council</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="0" href="committee.html?id=csw" target="_blank">
+          <div class="acronym">CSW</div>
+          <div class="full-name">Commission on the Status of Women</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=who" target="_blank">
+          <div class="acronym">WHO</div>
+          <div class="full-name">World Health Organization</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="120" href="committee.html?id=unodc" target="_blank">
+          <div class="acronym">UNODC</div>
+          <div class="full-name">UN Office on Drugs and Crime</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="0" href="committee.html?id=ctc" target="_blank">
+          <div class="acronym">CTC</div>
+          <div class="full-name">Counter-Terrorism Committee</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=unoosa" target="_blank">
+          <div class="acronym">UNOOSA</div>
+          <div class="full-name">UN Office for Outer Space Affairs</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="120" href="committee.html?id=us-senate" target="_blank">
+          <div class="acronym">US Senate</div>
+          <div class="full-name">United States Senate</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="0" href="committee.html?id=eu" target="_blank">
+          <div class="acronym">EU</div>
+          <div class="full-name">European Union Council</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="regular" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=iom" target="_blank">
+          <div class="acronym">IOM</div>
+          <div class="full-name">International Organization for Migration</div>
+          <span class="badge badge-regular">Regular</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+
+        <!-- SPECIALIZED (3) -->
+        <a class="committee-card-full" data-category="specialized" data-aos="fade-up" data-aos-delay="0" href="committee.html?id=gpm" target="_blank">
+          <div class="acronym">GPM</div>
+          <div class="full-name">Gabinete Presidencial Mexicano</div>
+          <span class="badge badge-specialized">Specialized</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="specialized" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=icc" target="_blank">
+          <div class="acronym">ICC</div>
+          <div class="full-name">International Criminal Court</div>
+          <span class="badge badge-specialized">Specialized</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="specialized" data-aos="fade-up" data-aos-delay="120" href="committee.html?id=interpol" target="_blank">
+          <div class="acronym">INTERPOL</div>
+          <div class="full-name">International Criminal Police Organization</div>
+          <span class="badge badge-specialized">Specialized</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+
+        <!-- BEGINNER (3) -->
+        <a class="committee-card-full" data-category="beginner" data-aos="fade-up" data-aos-delay="0" href="committee.html?id=unesco" target="_blank">
+          <div class="acronym">UNESCO</div>
+          <div class="full-name">UN Educational, Scientific and Cultural Organization</div>
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="beginner" data-aos="fade-up" data-aos-delay="60" href="committee.html?id=unicef" target="_blank">
+          <div class="acronym">UNICEF</div>
+          <div class="full-name">United Nations Children's Fund</div>
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+        <a class="committee-card-full" data-category="beginner" data-aos="fade-up" data-aos-delay="120" href="committee.html?id=unicef-ii" target="_blank">
+          <div class="acronym">UNICEF II</div>
+          <div class="full-name">United Nations Children's Fund — Committee II</div>
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="btn-paper">View Committee →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Pan American MUN" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Lead · Debate · Inspire<br>Universidad Panamericana · Monterrey</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="committees.html">Committees</a></li>
+            <li><a href="secretariat.html">Secretariat</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-social-row">
+            <a href="https://instagram.com/panamericanmun" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              @panamericanmun
+            </a>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://tiktok.com/@panamericanmun" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              @panamericanmun
+            </a>
+          </div>
+          <p class="footer-email"><a href="mailto:carolina.dg@alumno.pas.edu.mx">carolina.dg@alumno.pas.edu.mx</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
