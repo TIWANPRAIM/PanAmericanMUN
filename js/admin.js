@@ -277,36 +277,44 @@ document.addEventListener('DOMContentLoaded', loadAll);
 function showGHModal() {
   const modal = document.getElementById('gh-modal');
   modal.style.display = 'flex';
-  document.getElementById('gh-repo').value  = localStorage.getItem('pamun_gh_repo')  || '';
-  document.getElementById('gh-token').value = localStorage.getItem('pamun_gh_token') || '';
+  document.getElementById('gh-repo').value   = localStorage.getItem('pamun_gh_repo')   || '';
+  document.getElementById('gh-token').value  = localStorage.getItem('pamun_gh_token')  || '';
+  document.getElementById('gh-branch').value = localStorage.getItem('pamun_gh_branch') || 'main';
 }
 function closeGHModal() {
   document.getElementById('gh-modal').style.display = 'none';
 }
 function saveGitHubConfig() {
-  const repo  = document.getElementById('gh-repo').value.trim();
-  const token = document.getElementById('gh-token').value.trim();
+  const repo   = document.getElementById('gh-repo').value.trim();
+  const token  = document.getElementById('gh-token').value.trim();
+  const branch = document.getElementById('gh-branch').value.trim() || 'main';
   if (!repo || !token) { alert('Ingresa el repositorio y el token.'); return; }
-  localStorage.setItem('pamun_gh_repo',  repo);
-  localStorage.setItem('pamun_gh_token', token);
+  localStorage.setItem('pamun_gh_repo',   repo);
+  localStorage.setItem('pamun_gh_token',  token);
+  localStorage.setItem('pamun_gh_branch', branch);
   closeGHModal();
   publishToGitHub();
 }
 
-async function _ghUpdateFile(token, repo, path, content) {
+async function _ghUpdateFile(token, repo, branch, path, content) {
   const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
   const headers = {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json',
     'Accept': 'application/vnd.github.v3+json'
   };
+  // Fetch current SHA from the exact branch
   let sha = null;
   try {
-    const r = await fetch(apiUrl, { headers });
+    const r = await fetch(`${apiUrl}?ref=${branch}`, { headers });
     if (r.ok) { const d = await r.json(); sha = d.sha; }
   } catch(e) { /* file doesn't exist yet */ }
 
-  const body = { message: `Update ${path} via admin panel`, content: btoa(unescape(encodeURIComponent(content))) };
+  const body = {
+    message: `Update ${path} via admin panel`,
+    content: btoa(unescape(encodeURIComponent(content))),
+    branch: branch
+  };
   if (sha) body.sha = sha;
 
   const r = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
@@ -314,16 +322,17 @@ async function _ghUpdateFile(token, repo, path, content) {
 }
 
 async function publishToGitHub() {
-  const token = localStorage.getItem('pamun_gh_token');
-  const repo  = localStorage.getItem('pamun_gh_repo');
+  const token  = localStorage.getItem('pamun_gh_token');
+  const repo   = localStorage.getItem('pamun_gh_repo');
+  const branch = localStorage.getItem('pamun_gh_branch') || 'main';
   if (!token || !repo) { showGHModal(); return; }
 
   showStatus('Publicando en GitHub...', '');
   saveAll();
 
   try {
-    await _ghUpdateFile(token, repo, 'data/site-data.json',      JSON.stringify(_cur,        null, 2));
-    await _ghUpdateFile(token, repo, 'data/committees-data.json', JSON.stringify(_committees, null, 2));
+    await _ghUpdateFile(token, repo, branch, 'data/site-data.json',      JSON.stringify(_cur,        null, 2));
+    await _ghUpdateFile(token, repo, branch, 'data/committees-data.json', JSON.stringify(_committees, null, 2));
     showStatus('✓ Publicado — en vivo en ~30 seg', 'saved');
     setTimeout(() => showStatus(''), 6000);
   } catch(e) {
