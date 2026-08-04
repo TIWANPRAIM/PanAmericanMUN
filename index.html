@@ -17,12 +17,15 @@
   <!-- ═══ NAVBAR ═══ -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">PAN<span class="dot">·</span>MUN</a>
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img">
+      </a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="committees.html">Committees</a>
         <a href="secretariat.html">Secretariat</a>
         <a href="faq.html">FAQ</a>
+        <a href="toolkit.html">Toolkit</a>
       </div>
       <div class="nav-hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -34,15 +37,21 @@
     <a href="committees.html">Committees</a>
     <a href="secretariat.html">Secretariat</a>
     <a href="faq.html">FAQ</a>
+    <a href="toolkit.html">Toolkit</a>
   </div>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="img/skyline-video.mp4" type="video/mp4">
+    </video>
     <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
+    <div class="un-emblem-bg" aria-hidden="true">
+      <img src="img/logo.png" alt="">
+    </div>
     <div class="hero-content">
-      <p class="hero-label">PAN AMERICAN SYSTEM · Monterrey</p>
-      <h1 class="hero-title">Pan <span class="gold">American</span><br>MUN</h1>
+      <h1 class="hero-title"><span class="pine">Pan American</span><br>MUN</h1>
       <p class="hero-subtitle"><span id="hero-typewriter"></span></p>
       <p class="hero-date">September 16, 2026 &nbsp;·&nbsp; Monterrey, México</p>
       <div class="countdown">
@@ -70,10 +79,6 @@
         <a href="#" class="btn btn-gold">Register Now</a>
         <a href="committees.html" class="btn btn-outline">Explore Committees</a>
       </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-chevron"></div>
     </div>
   </section>
 
@@ -116,21 +121,8 @@
           </div>
         </div>
         <div class="about-graphic" data-aos="fade-left">
-          <div class="globe-wrap">
-            <div class="globe-glow"></div>
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="280" height="280">
-              <circle cx="100" cy="100" r="90" stroke="rgba(201,168,76,0.35)" stroke-width="1.5" stroke-dasharray="4 4"/>
-              <circle cx="100" cy="100" r="65" stroke="rgba(201,168,76,0.25)" stroke-width="1" stroke-dasharray="3 3"/>
-              <circle cx="100" cy="100" r="40" stroke="rgba(201,168,76,0.2)"  stroke-width="1"/>
-              <ellipse cx="100" cy="100" rx="90" ry="38" stroke="rgba(201,168,76,0.18)" stroke-width="1" stroke-dasharray="4 4"/>
-              <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(201,168,76,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(201,168,76,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
-              <circle cx="100" cy="100" r="4" fill="#C9A84C"/>
-              <circle cx="65"  cy="85"  r="2.5" fill="rgba(201,168,76,0.7)"/>
-              <circle cx="130" cy="75"  r="2.5" fill="rgba(201,168,76,0.7)"/>
-              <circle cx="115" cy="120" r="2"   fill="rgba(201,168,76,0.6)"/>
-              <circle cx="80"  cy="130" r="2"   fill="rgba(201,168,76,0.6)"/>
-            </svg>
+          <div class="about-school-photo">
+            <img src="img/school.jpg" alt="Universidad Panamericana — Pan American MUN venue">
           </div>
         </div>
       </div>
@@ -151,7 +143,7 @@
           <h2 class="sg-letter-content" style="font-style:italic;margin-bottom:2rem;">A Letter from the<br>Secretary-General</h2>
           <p class="sg-letter-text">Dear Delegates, Faculty Advisors, and Distinguished Guests,</p>
           <p class="sg-letter-text">It is with immense pride and excitement that I welcome you to Pan American MUN 2026. As Secretary-General, I am honored to lead a conference that has grown to become one of Monterrey's most anticipated academic events, bringing together the brightest student minds in a spirit of diplomacy and collaboration.</p>
-          <p class="sg-letter-text">This year, under the theme <em>"Shaping Tomorrow's World,"</em> we invite delegates to engage with the challenges that define our generation — from climate security and human rights to emerging technology and global health. Each committee session is designed to challenge you, inspire you, and ultimately transform you into a more thoughtful and effective global citizen.</p>
+          <p class="sg-letter-text">This year, under the theme <em>"Lead · Debate · Inspire,"</em> we invite delegates to engage with the challenges that define our generation — from climate security and human rights to emerging technology and global health. Each committee session is designed to challenge you, inspire you, and ultimately transform you into a more thoughtful and effective global citizen.</p>
           <p class="sg-letter-text">I look forward to witnessing the passion, intellect, and creativity that you will bring to the dais. Together, let us build a conference worthy of the world we wish to create.</p>
           <div class="sg-closing">
             <p>Yours in diplomacy,</p>
@@ -160,6 +152,20 @@
             <p class="sg-title-lbl" style="margin-top:0.5rem;">Secretary-General · Pan American MUN 2026</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IN ACTION ═══ -->
+  <section class="in-action">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up"><span>Pan American MUN in Action</span></h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Delegates in debate — moments from the conference floor</p>
+      <div class="in-action-grid">
+        <img src="img/session1.jpg" alt="Committee session in progress" data-aos="fade-up" data-aos-delay="0">
+        <img src="img/session2.jpg" alt="Delegates debating at the dais" data-aos="fade-up" data-aos-delay="80">
+        <img src="img/session3.jpg" alt="Opening ceremony of Pan American MUN" data-aos="fade-up" data-aos-delay="160">
+        <img src="img/session4.jpg" alt="Awards ceremony at Pan American MUN" data-aos="fade-up" data-aos-delay="240">
       </div>
     </div>
   </section>
@@ -238,8 +244,10 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo">PAN<span class="dot">·</span>MUN</div>
-          <p class="footer-tagline">Shaping Tomorrow's World<br>PAN AMERICAN SYSTEM · Monterrey</p>
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Pan American MUN" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Lead · Debate · Inspire<br>Universidad Panamericana · Monterrey</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
@@ -248,6 +256,7 @@
             <li><a href="committees.html">Committees</a></li>
             <li><a href="secretariat.html">Secretariat</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="toolkit.html">Toolkit</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -267,11 +276,41 @@
           <p class="footer-email"><a href="mailto:carolina.dg@alumno.pas.edu.mx">carolina.dg@alumno.pas.edu.mx</a></p>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved</div>
+      <div class="footer-bottom">
+        © 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved
+        <br><a href="admin.html" class="footer-admin-link">⚙ Admin Panel</a>
+      </div>
     </div>
   </footer>
 
+  <script src="js/site-data.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
+  <script>
+  (async function(){
+    if (typeof SiteData === 'undefined') return;
+    const d = await SiteData.loadRemote();
+    const sgPhoto = document.querySelector('.sg-photo');
+    if (sgPhoto) sgPhoto.src = d.sg.photo;
+    const sgName = document.querySelector('.sg-name');
+    if (sgName) sgName.textContent = d.sg.name;
+    const sgTitles = document.querySelectorAll('.sg-title-lbl');
+    if (sgTitles[0]) sgTitles[0].textContent = d.sg.indexRole;
+    const ltexts = document.querySelectorAll('.sg-letter-text');
+    [d.sg.letterOpening, d.sg.letter1, d.sg.letter2, d.sg.letter3].forEach((t,i) => { if (ltexts[i] && t) ltexts[i].textContent = t; });
+    const sgClosing = document.querySelector('.sg-closing p:first-child');
+    if (sgClosing) sgClosing.textContent = d.sg.closing;
+    const sgSig = document.querySelector('.sg-signature');
+    if (sgSig) sgSig.textContent = d.sg.signature;
+    if (sgTitles[1]) sgTitles[1].textContent = d.sg.signatureTitle;
+    const regBtn = document.querySelector('.hero-ctas .btn-gold');
+    if (regBtn && d.conference.registerUrl && d.conference.registerUrl !== '#') regBtn.href = d.conference.registerUrl;
+    const imgs = document.querySelectorAll('.in-action-grid img');
+    ['session1','session2','session3','session4'].forEach((k,i) => { if (imgs[i] && d.gallery[k]) imgs[i].src = d.gallery[k]; });
+    const school = document.querySelector('.about-school-photo img');
+    if (school && d.gallery.school) school.src = d.gallery.school;
+    document.querySelectorAll('.footer-email a').forEach(a => { if (d.social.email) { a.href='mailto:'+d.social.email; a.textContent=d.social.email; } });
+  })();
+  </script>
 </body>
 </html>

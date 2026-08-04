@@ -17,12 +17,15 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">PAN<span class="dot">·</span>MUN</a>
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img">
+      </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="committees.html">Committees</a>
         <a href="secretariat.html">Secretariat</a>
         <a href="faq.html" class="active">FAQ</a>
+        <a href="toolkit.html">Toolkit</a>
       </div>
       <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
@@ -32,12 +35,43 @@
     <a href="committees.html">Committees</a>
     <a href="secretariat.html">Secretariat</a>
     <a href="faq.html" class="active">FAQ</a>
+    <a href="toolkit.html">Toolkit</a>
   </div>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
     <canvas id="page-canvas"></canvas>
     <div class="page-hero-overlay"></div>
+    <div class="un-emblem-bg" aria-hidden="true">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="150" cy="150" r="145" stroke-width="5"/>
+        <circle cx="150" cy="150" r="135" stroke-width="2.5"/>
+        <circle cx="150" cy="150" r="108" stroke-width="2"/>
+        <circle cx="150" cy="150" r="80" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="54" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="28" stroke-width="1"/>
+        <line x1="150" y1="42" x2="150" y2="258" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="50" ry="108" stroke-width="1.2"/>
+        <line x1="42" y1="150" x2="258" y2="150" stroke-width="1.5"/>
+        <ellipse cx="150" cy="150" rx="108" ry="40" stroke-width="1.2"/>
+        <ellipse cx="150" cy="108" rx="86" ry="28" stroke-width="1"/>
+        <ellipse cx="150" cy="192" rx="86" ry="28" stroke-width="1"/>
+        <line x1="75" y1="75" x2="225" y2="225" stroke-width="0.8"/>
+        <line x1="225" y1="75" x2="75" y2="225" stroke-width="0.8"/>
+        <path d="M40,150 C30,128 24,108 28,82" stroke-width="2.5"/>
+        <ellipse cx="27" cy="138" rx="11" ry="5.5" transform="rotate(-30,27,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="122" rx="11" ry="5.5" transform="rotate(-42,24,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="24" cy="107" rx="10" ry="5" transform="rotate(-52,24,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="27" cy="93" rx="9" ry="4.5" transform="rotate(-62,27,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="31" cy="81" rx="8" ry="4" transform="rotate(-70,31,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <path d="M260,150 C270,128 276,108 272,82" stroke-width="2.5"/>
+        <ellipse cx="273" cy="138" rx="11" ry="5.5" transform="rotate(30,273,138)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="122" rx="11" ry="5.5" transform="rotate(42,276,122)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="276" cy="107" rx="10" ry="5" transform="rotate(52,276,107)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="273" cy="93" rx="9" ry="4.5" transform="rotate(62,273,93)" fill="currentColor" stroke="none" opacity="0.6"/>
+        <ellipse cx="269" cy="81" rx="8" ry="4" transform="rotate(70,269,81)" fill="currentColor" stroke="none" opacity="0.6"/>
+      </svg>
+    </div>
     <div class="page-hero-content">
       <h1>FAQ</h1>
       <div class="gold-line"></div>
@@ -167,8 +201,10 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo">PAN<span class="dot">·</span>MUN</div>
-          <p class="footer-tagline">Shaping Tomorrow's World<br>PAN AMERICAN SYSTEM · Monterrey</p>
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Pan American MUN" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline">Lead · Debate · Inspire<br>Universidad Panamericana · Monterrey</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
@@ -177,6 +213,7 @@
             <li><a href="committees.html">Committees</a></li>
             <li><a href="secretariat.html">Secretariat</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="toolkit.html">Toolkit</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -196,7 +233,10 @@
           <p class="footer-email"><a href="mailto:carolina.dg@alumno.pas.edu.mx">carolina.dg@alumno.pas.edu.mx</a></p>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved</div>
+      <div class="footer-bottom">
+        © 2026 Pan American MUN · PAN AMERICAN SYSTEM · All rights reserved
+        <br><a href="admin.html" class="footer-admin-link">⚙ Admin Panel</a>
+      </div>
     </div>
   </footer>
 

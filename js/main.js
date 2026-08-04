@@ -37,7 +37,7 @@ function initParticles(canvasId) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const GOLD = 'rgba(201,168,76,';
+  const GOLD = 'rgba(255,255,255,';
   const COUNT = 70;
   const MAX_D = 130;
   let W, H, pts = [];
@@ -210,10 +210,38 @@ function initFilter() {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const f = tab.dataset.filter;
-      cards.forEach(c => { c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none'; });
+      cards.forEach(c => {
+        const show = f === 'all' || c.dataset.category === f;
+        c.style.display = show ? '' : 'none';
+        if (show) c.classList.add('aos-animate');
+      });
     });
   });
 }
+
+/* ── Toolkit sub-tabs ── */
+function initToolkitTabs() {
+  const tabs = document.querySelectorAll('.toolkit-tab');
+  const panels = document.querySelectorAll('.toolkit-panel');
+  if (!tabs.length) return;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.panel;
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+    });
+  });
+}
+
+/* ── Hero video clip (start at best skyline moment, loop from there) ── */
+(function initHeroVideo() {
+  const video = document.querySelector('.hero-video');
+  if (!video) return;
+  const START = 4; // seconds — seek to this point on load and on each loop
+  video.addEventListener('loadeddata', () => { video.currentTime = START; });
+  video.addEventListener('seeked', () => { video.play(); });
+})();
 
 /* ── Boot ── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -222,9 +250,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initParticles('hero-canvas');
   initParticles('page-canvas');
-  initTypewriter('hero-typewriter', "Shaping Tomorrow's World", 58);
-  initCountdown('2026-09-16T09:00:00');
+  const _theme = (typeof SiteData !== 'undefined') ? SiteData.get().conference.theme : 'Lead · Debate · Inspire';
+  const _cdDate = (typeof SiteData !== 'undefined') ? SiteData.get().conference.countdownDate : '2026-09-16T09:00:00';
+  initTypewriter('hero-typewriter', _theme, 68);
+  initCountdown(_cdDate);
   initCounters();
   initFAQ();
   initFilter();
+  initToolkitTabs();
 });

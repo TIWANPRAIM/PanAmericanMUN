@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Pan American MUN</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg-deep); }
+    .al-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3rem 2.5rem; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 12px 40px rgba(2,62,138,.08); }
+    .al-logo { width: 72px; margin: 0 auto 1.5rem; display: block; }
+    .al-title { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-1); margin: 0 0 .3rem; }
+    .al-sub { color: var(--text-3); font-size: .82rem; margin: 0 0 2rem; }
+    .al-field { text-align: left; margin-bottom: 1rem; }
+    .al-field label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-2); margin-bottom: .45rem; }
+    .al-field input { width: 100%; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: .95rem; color: var(--text-1); background: #fff; transition: border-color .2s; box-sizing: border-box; }
+    .al-field input:focus { outline: none; border-color: var(--gold); }
+    .al-err { color: #e53935; font-size: .82rem; margin-bottom: 1rem; display: none; padding: .6rem 1rem; background: #fef2f2; border-radius: var(--radius); }
+    .al-btn { width: 100%; padding: .9rem; border: none; border-radius: var(--radius); background: var(--gold); color: #fff; font-weight: 700; font-size: .88rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; margin-top: .5rem; transition: .2s; }
+    .al-btn:hover { filter: brightness(1.1); }
+  </style>
+</head>
+<body>
+  <div class="al-card">
+    <img src="img/logo.png" alt="Pan American MUN" class="al-logo">
+    <h1 class="al-title">Panel de Administración</h1>
+    <p class="al-sub">Pan American MUN · Acceso restringido</p>
+    <p class="al-err" id="al-err">Usuario o contraseña incorrectos.</p>
+    <div class="al-field">
+      <label>Usuario</label>
+      <input type="text" id="al-user" placeholder="admin" autocomplete="username">
+    </div>
+    <div class="al-field">
+      <label>Contraseña</label>
+      <input type="password" id="al-pass" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="al-btn" id="al-submit">Iniciar Sesión</button>
+  </div>
+  <script>
+    /* Credenciales: usuario = admin, contraseña = pamun2026
+       Para cambiarlas, actualiza _U y _P con btoa('nuevousuario') y btoa('nuevacontraseña') */
+    const _U = 'YWRtaW4=', _P = 'cGFtdW4yMDI2';
+    if (sessionStorage.getItem('pamun_admin') === '1') location.href = 'admin-panel.html';
+    function tryLogin() {
+      const u = document.getElementById('al-user').value.trim();
+      const p = document.getElementById('al-pass').value;
+      const err = document.getElementById('al-err');
+      err.style.display = 'none';
+      if (btoa(u) === _U && btoa(p) === _P) {
+        sessionStorage.setItem('pamun_admin', '1');
+        location.href = 'admin-panel.html';
+      } else {
+        err.style.display = 'block';
+        document.getElementById('al-pass').value = '';
+        document.getElementById('al-pass').focus();
+      }
+    }
+    document.getElementById('al-submit').addEventListener('click', tryLogin);
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+    document.getElementById('al-user').focus();
+  </script>
+</body>
+</html>
