@@ -1,0 +1,112 @@
+<h2>Where should the photos live?</h2>
+<p class="subtitle">You shared 6 photos: the school building, 4 in-session committee shots, and the team group photo. Where should each group land?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f9ff;padding:12px;">
+      <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:#0077b6;margin-bottom:6px;text-transform:uppercase;">Index.html — full page layout</div>
+      <div style="background:#023e8a;height:28px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.5rem;">HERO — Skyline of San Pedro GG</div>
+      <div style="background:#f0f7f4;height:16px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.45rem;color:#2d6a4f;">STATS STRIP</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;height:22px;margin-bottom:3px;">
+        <div style="background:#e8f2ff;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">ABOUT TEXT</div>
+        <div style="background:#023e8a;border-radius:3px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.42rem;">📷 SCHOOL PHOTO</div>
+      </div>
+      <div style="background:#eef7f3;height:16px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.45rem;">SG LETTER</div>
+      <div style="background:#f0f7f4;border-radius:3px;padding:4px;margin-bottom:3px;">
+        <div style="font-size:0.45rem;font-weight:700;color:#2d6a4f;margin-bottom:2px;">📸 IN ACTION — 4 session photos grid</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;height:14px;">
+          <div style="background:#0077b6;border-radius:2px;"></div>
+          <div style="background:#005b8e;border-radius:2px;"></div>
+          <div style="background:#0096c7;border-radius:2px;"></div>
+          <div style="background:#023e8a;border-radius:2px;"></div>
+        </div>
+      </div>
+      <div style="background:#f5f9ff;height:14px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">COMMITTEES PREVIEW</div>
+      <div style="background:#f5f9ff;height:14px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">SPONSORS</div>
+      <div style="background:#03045e;height:12px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.4rem;">FOOTER</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Photos woven into homepage</h3>
+      <p>School photo replaces the globe SVG in the About section. Session photos get their own <strong>"Pan American MUN in Action"</strong> section between the SG letter and Committees preview. Team group photo moves to the Secretariat page.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Keeps the homepage rich without a new page</li><li>Contextual — each photo near related content</li><li>School photo shows the real venue</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Homepage gets longer</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f9ff;padding:12px;">
+      <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;color:#0077b6;margin-bottom:6px;text-transform:uppercase;">Index.html — full page layout</div>
+      <div style="background:#023e8a;height:28px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.5rem;">HERO — Skyline of San Pedro GG</div>
+      <div style="background:#f0f7f4;height:16px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.45rem;color:#2d6a4f;">STATS STRIP</div>
+      <div style="background:#e8f2ff;height:20px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">ABOUT (text only, no globe)</div>
+      <div style="background:#eef7f3;height:16px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.45rem;">SG LETTER</div>
+      <div style="background:#f5f9ff;height:14px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">COMMITTEES PREVIEW</div>
+      <div style="background:#f5f9ff;height:14px;border-radius:3px;margin-bottom:3px;display:flex;align-items:center;justify-content:center;font-size:0.42rem;">SPONSORS</div>
+      <div style="background:#023e8a;border-radius:3px;padding:4px;margin-bottom:3px;">
+        <div style="font-size:0.45rem;font-weight:700;color:#90e0ef;margin-bottom:2px;">📸 FULL-WIDTH GALLERY — school + 4 sessions + team</div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:2px;height:20px;">
+          <div style="background:rgba(255,255,255,0.15);border-radius:2px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.38rem;">School (hero)</div>
+          <div style="display:grid;gap:2px;">
+            <div style="background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+            <div style="background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+          </div>
+          <div style="display:grid;gap:2px;">
+            <div style="background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+            <div style="background:rgba(255,255,255,0.1);border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#03045e;height:12px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.4rem;">FOOTER</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Masonry gallery just before footer</h3>
+      <p>All 6 photos go into a dark-blue masonry gallery section at the bottom of the homepage — school building featured large, the 4 session photos filling the grid. Team group photo goes to Secretariat page.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Clean gallery block — all photos together</li><li>Dramatic visual finish before footer</li><li>Easy to expand later</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Photos separated from related context</li><li>Users need to scroll far to see them</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f5f9ff;padding:12px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+        <div>
+          <div style="font-size:0.5rem;font-weight:700;color:#0077b6;margin-bottom:4px;">index.html (unchanged flow)</div>
+          <div style="background:#023e8a;height:18px;border-radius:2px;margin-bottom:2px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.4rem;">HERO</div>
+          <div style="background:#f0f7f4;height:10px;border-radius:2px;margin-bottom:2px;"></div>
+          <div style="background:#e8f2ff;height:12px;border-radius:2px;margin-bottom:2px;display:flex;align-items:center;justify-content:center;font-size:0.38rem;">ABOUT + School photo</div>
+          <div style="background:#eef7f3;height:10px;border-radius:2px;margin-bottom:2px;"></div>
+          <div style="background:#f5f9ff;height:10px;border-radius:2px;margin-bottom:2px;"></div>
+          <div style="background:#03045e;height:8px;border-radius:2px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.36rem;">FOOTER</div>
+        </div>
+        <div>
+          <div style="font-size:0.5rem;font-weight:700;color:#2d6a4f;margin-bottom:4px;">gallery.html (new page)</div>
+          <div style="background:#023e8a;height:18px;border-radius:2px;margin-bottom:2px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.4rem;">PAGE HERO</div>
+          <div style="background:#f5f9ff;border-radius:2px;padding:3px;margin-bottom:2px;">
+            <div style="font-size:0.38rem;color:#0077b6;margin-bottom:2px;">Past Conferences</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;height:20px;">
+              <div style="background:#0077b6;border-radius:1px;"></div>
+              <div style="background:#005b8e;border-radius:1px;"></div>
+              <div style="background:#0096c7;border-radius:1px;"></div>
+              <div style="background:#023e8a;border-radius:1px;"></div>
+            </div>
+          </div>
+          <div style="background:#03045e;height:8px;border-radius:2px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.36rem;">FOOTER</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — New "Gallery" page in navbar</h3>
+      <p>Add a 5th navbar item: "Gallery." All session photos live there under a "Past Conferences" heading. School photo goes in the About section of the homepage. Team group photo on Secretariat page.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Homepage stays lean</li><li>Scalable — add future conference photos easily</li><li>Clean separation of concerns</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Fewer people will discover the photos</li><li>Extra page to maintain</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
