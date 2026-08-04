@@ -1,0 +1,78 @@
+/* PAMUN Visual Editor UI — activated when ?edit=true */
+
+/* ── top bar ── */
+.ve-bar{position:fixed;top:0;left:0;right:0;z-index:99999;height:46px;
+  background:rgba(10,13,24,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(99,102,241,.35);display:flex;align-items:center;
+  padding:0 1rem;gap:.55rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.78rem}
+.ve-badge{display:flex;align-items:center;gap:.35rem;background:#22c55e;color:#fff;
+  font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:.18rem .6rem;border-radius:999px;flex-shrink:0}
+.ve-badge-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:ve-blink 1.4s infinite}
+@keyframes ve-blink{0%,100%{opacity:1}50%{opacity:.2}}
+.ve-bar-hint{color:rgba(255,255,255,.38);flex:1;font-size:.71rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ve-btn{display:inline-flex;align-items:center;gap:.38rem;padding:.28rem .78rem;border-radius:6px;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.78);font-size:.72rem;font-weight:500;cursor:pointer;transition:.15s;white-space:nowrap}
+.ve-btn:hover{background:rgba(255,255,255,.14);color:#fff}
+.ve-btn-save{background:#6366f1;border-color:#4f46e5;color:#fff}
+.ve-btn-save:hover{background:#4f46e5}
+.ve-btn-pub{background:#22c55e;border-color:#16a34a;color:#fff}
+.ve-btn-pub:hover{background:#16a34a}
+.ve-btn-exit{border-color:transparent;background:transparent;color:rgba(255,255,255,.4)}
+.ve-btn-exit:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+
+/* body offset */
+body.ve-on{margin-top:46px!important}
+
+/* ── editable element highlights ── */
+body.ve-on [data-ve-img]:hover{outline:2px dashed #6366f1!important;outline-offset:3px!important;cursor:pointer!important;position:relative}
+body.ve-on [data-ve-text]:hover{outline:2px dashed #6366f1!important;outline-offset:2px!important;cursor:text!important;position:relative}
+body.ve-on [data-ve-img].ve-sel{outline:2px solid #22c55e!important;outline-offset:3px!important}
+body.ve-on [data-ve-text][contenteditable="true"]{outline:2px solid #f59e0b!important;outline-offset:2px!important;cursor:text!important}
+
+/* ── floating tooltip ── */
+.ve-tip{position:fixed;z-index:100001;background:#6366f1;color:#fff;
+  font-family:-apple-system,sans-serif;font-size:.62rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px;
+  pointer-events:none;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+
+/* ── image/element popup ── */
+.ve-pop{position:absolute;z-index:100002;width:315px;
+  background:#1e2537;border:1px solid rgba(99,102,241,.45);border-radius:13px;
+  padding:1.1rem;box-shadow:0 24px 64px rgba(0,0,0,.75);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.ve-pop-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.ve-pop-title{color:#fff;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ve-pop-x{background:none;border:none;color:rgba(255,255,255,.35);cursor:pointer;
+  font-size:1.15rem;line-height:1;padding:0;transition:.15s}
+.ve-pop-x:hover{color:#fff}
+.ve-prev{width:100%;height:132px;object-fit:cover;border-radius:7px;
+  background:#374151;display:block;margin-bottom:.85rem}
+.ve-lbl{display:block;color:rgba(255,255,255,.4);font-size:.67rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.ve-row{display:flex;gap:.42rem;margin-bottom:.6rem;align-items:stretch}
+.ve-input{flex:1;background:#111827;border:1px solid rgba(255,255,255,.13);border-radius:6px;
+  color:rgba(255,255,255,.85);font-size:.75rem;padding:.42rem .65rem;box-sizing:border-box;min-width:0}
+.ve-input:focus{outline:none;border-color:#6366f1}
+.ve-upload-btn{display:flex;align-items:center;padding:0 .65rem;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.13);border-radius:6px;color:rgba(255,255,255,.6);
+  cursor:pointer;transition:.15s;flex-shrink:0}
+.ve-upload-btn:hover{background:rgba(255,255,255,.14);color:#fff}
+.ve-slider-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.28rem}
+.ve-slider-lbl{color:rgba(255,255,255,.4);font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ve-slider-val{color:rgba(255,255,255,.55);font-size:.68rem;font-weight:600}
+input[type=range].ve-range{width:100%;height:3px;accent-color:#6366f1;margin-bottom:.75rem;cursor:pointer}
+.ve-actions{display:flex;gap:.45rem;margin-top:.55rem}
+.ve-pop-btn{flex:1;padding:.44rem .6rem;border-radius:6px;border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);font-size:.72rem;
+  font-weight:600;cursor:pointer;transition:.15s}
+.ve-pop-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.ve-pop-btn-p{background:#6366f1;border-color:#4f46e5;color:#fff}
+.ve-pop-btn-p:hover{background:#4f46e5}
+
+/* ── saved toast ── */
+.ve-toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100003;
+  background:#22c55e;color:#fff;font-family:-apple-system,sans-serif;
+  font-size:.76rem;font-weight:700;padding:.5rem 1.05rem;border-radius:8px;
+  box-shadow:0 8px 28px rgba(0,0,0,.45);transition:opacity .35s;pointer-events:none}

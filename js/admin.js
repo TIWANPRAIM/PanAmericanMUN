@@ -331,7 +331,11 @@ async function publishToGitHub() {
   saveAll();
 
   try {
-    await _ghUpdateFile(token, repo, branch, 'data/site-data.json',      JSON.stringify(_cur,        null, 2));
+    // merge visual editor overrides into published site-data
+    const veRaw = localStorage.getItem('pamun_ve');
+    const veData = veRaw ? JSON.parse(veRaw) : null;
+    const pubData = Object.assign({}, _cur, veData ? { ve: veData } : {});
+    await _ghUpdateFile(token, repo, branch, 'data/site-data.json',      JSON.stringify(pubData,      null, 2));
     await _ghUpdateFile(token, repo, branch, 'data/committees-data.json', JSON.stringify(_committees, null, 2));
     showStatus('✓ Publicado — en vivo en ~30 seg', 'saved');
     setTimeout(() => showStatus(''), 6000);

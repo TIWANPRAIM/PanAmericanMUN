@@ -112,8 +112,9 @@ body.ap-body { margin: 0; background: var(--ap-bg); font-family: -apple-system, 
 .ap-gallery-item .ap-thumb.rect { width: 100%; height: 110px; margin-bottom: .65rem; }
 
 /* BUTTONS */
-.ap-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem 1.4rem; border: none; border-radius: 8px; font-size: .84rem; font-weight: 700; cursor: pointer; letter-spacing: .03em; transition: .2s; text-decoration: none; }
-.ap-btn-primary { background: var(--ap-accent); color: #fff; }
+.ap-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem 1.4rem; border: 1px solid rgba(255,255,255,.13); border-radius: 8px; font-size: .84rem; font-weight: 600; cursor: pointer; letter-spacing: .03em; transition: .2s; text-decoration: none; background: rgba(255,255,255,.07); color: rgba(255,255,255,.8); }
+.ap-btn:hover { background: rgba(255,255,255,.13); color: #fff; }
+.ap-btn-primary { background: var(--ap-accent); color: #fff; border-color: transparent; }
 .ap-btn-primary:hover { filter: brightness(1.1); }
 
 /* RESPONSIVE */

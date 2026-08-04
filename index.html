@@ -18,7 +18,7 @@
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo">
-        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img">
+        <img src="img/logo.png" alt="Pan American MUN" class="nav-logo-img" data-ve-img="logo" data-ve-label="Logo">
       </a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
@@ -51,9 +51,9 @@
       <img src="img/logo.png" alt="">
     </div>
     <div class="hero-content">
-      <h1 class="hero-title"><span class="pine">Pan American</span><br>MUN</h1>
+      <h1 class="hero-title" data-ve-text="hero-title" data-ve-label="Hero Title"><span class="pine">Pan American</span><br>MUN</h1>
       <p class="hero-subtitle"><span id="hero-typewriter"></span></p>
-      <p class="hero-date">September 16, 2026 &nbsp;·&nbsp; Monterrey, México</p>
+      <p class="hero-date" data-ve-text="hero-date" data-ve-label="Event Date">September 16, 2026 &nbsp;·&nbsp; Monterrey, México</p>
       <div class="countdown">
         <div class="countdown-unit">
           <span class="countdown-num" id="cd-days">---</span>
@@ -114,7 +114,7 @@
           <div class="about-accent"></div>
           <div class="about-text">
             <span class="label-gold">About the Conference</span>
-            <h2>Where Young Leaders<br>Shape Global Policy</h2>
+            <h2 data-ve-text="about-heading" data-ve-label="About Heading">Where Young Leaders<br>Shape Global Policy</h2>
             <p>Pan American MUN is the flagship Model United Nations conference of Pan American School, San Pedro Garza García. Each year, hundreds of delegates from across the region gather to debate, negotiate, and forge solutions to the world's most pressing challenges.</p>
             <p>Through rigorous committee sessions, delegates develop critical thinking, public speaking, and diplomatic skills — emerging as the next generation of global leaders. With 17 committees spanning every level of experience, Pan American MUN offers a transformative journey for every participant.</p>
             <a href="committees.html" class="btn btn-outline mt-4">View All Committees</a>
@@ -122,7 +122,7 @@
         </div>
         <div class="about-graphic" data-aos="fade-left">
           <div class="about-school-photo">
-            <img src="img/school.jpg" alt="Pan American School — Pan American MUN venue">
+            <img src="img/school.jpg" alt="Pan American School — Pan American MUN venue" data-ve-img="school" data-ve-label="School Photo">
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@
     <div class="container">
       <div class="sg-letter-grid">
         <div data-aos="fade-right">
-          <img src="img/carolina.jpg" alt="Carolina De La Garza González — Secretary-General" class="sg-photo" onerror="this.outerHTML='<div class=\'sg-photo-placeholder\'><svg width=\'64\' height=\'64\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg><span>Photo coming soon</span></div>'">
+          <img src="img/carolina.jpg" alt="Carolina De La Garza González — Secretary-General" class="sg-photo" data-ve-img="sg-photo" data-ve-label="SG Photo" onerror="this.outerHTML='<div class=\'sg-photo-placeholder\'><svg width=\'64\' height=\'64\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><path d=\'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\'/><circle cx=\'12\' cy=\'7\' r=\'4\'/></svg><span>Photo coming soon</span></div>'">
           <h3 class="sg-name">Carolina De La Garza González</h3>
           <p class="sg-title-lbl">Secretary-General, Pan American MUN</p>
         </div>
@@ -162,10 +162,10 @@
       <h2 class="section-title" data-aos="fade-up"><span>Pan American MUN in Action</span></h2>
       <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Delegates in debate — moments from the conference floor</p>
       <div class="in-action-grid">
-        <img src="img/session1.jpg" alt="Committee session in progress" data-aos="fade-up" data-aos-delay="0">
-        <img src="img/session2.jpg" alt="Delegates debating at the dais" data-aos="fade-up" data-aos-delay="80">
-        <img src="img/session3.jpg" alt="Opening ceremony of Pan American MUN" data-aos="fade-up" data-aos-delay="160">
-        <img src="img/session4.jpg" alt="Awards ceremony at Pan American MUN" data-aos="fade-up" data-aos-delay="240">
+        <img src="img/session1.jpg" alt="Committee session in progress" data-aos="fade-up" data-aos-delay="0" data-ve-img="session1" data-ve-label="Gallery 1">
+        <img src="img/session2.jpg" alt="Delegates debating at the dais" data-aos="fade-up" data-aos-delay="80" data-ve-img="session2" data-ve-label="Gallery 2">
+        <img src="img/session3.jpg" alt="Opening ceremony of Pan American MUN" data-aos="fade-up" data-aos-delay="160" data-ve-img="session3" data-ve-label="Gallery 3">
+        <img src="img/session4.jpg" alt="Awards ceremony at Pan American MUN" data-aos="fade-up" data-aos-delay="240" data-ve-img="session4" data-ve-label="Gallery 4">
       </div>
     </div>
   </section>
@@ -292,12 +292,14 @@
   </footer>
 
   <script src="js/site-data.js"></script>
+  <script src="js/visual-editor.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
   <script>
   (async function(){
     if (typeof SiteData === 'undefined') return;
     const d = await SiteData.loadRemote();
+    if (d.ve && window.VE_applyRemote) VE_applyRemote(d.ve);
     const sgPhoto = document.querySelector('.sg-photo');
     if (sgPhoto) sgPhoto.src = d.sg.photo;
     const sgName = document.querySelector('.sg-name');
